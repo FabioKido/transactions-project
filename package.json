@@ -1,0 +1,24 @@
+{
+  "name": "studies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "ts-node src/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "express": "^4.18.2",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.10.6",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.2"
+  }
+}
