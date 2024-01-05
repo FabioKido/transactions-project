@@ -1,9 +1,19 @@
-import express, { Request, Response } from "express";
+/**
+ * Camada 4
+ * Frameworks - Drivers
+ * Entry point
+ */
 
-const app = express();
+import ExpressAdapter from "./infra/api/ExpressAdapter";
+import Router from "./infra/api/Router";
+import PostgreSQLAdapter from "./infra/database/PostgreSQLAdapter";
+import TransactionMemoryRepository from "./infra/repository/TransactionMemoryRepository";
 
-app.use(express.json());
+// const connection = new PostgreSQLAdapter()
+// const transactionRepository = new TransactionDatabaseRepository()
+const transactionRepository = new TransactionMemoryRepository()
+const httpServer = new ExpressAdapter()
+const router = new Router(httpServer, transactionRepository)
 
-app.listen(3000, () => {
-    console.log('Server started: http://localhost:3000')
-});
+router.init()
+httpServer.listen(3000)
