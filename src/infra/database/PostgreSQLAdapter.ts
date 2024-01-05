@@ -13,7 +13,7 @@ export default class PostgreSQLAdapter implements Connection {
     connection: any
 
     constructor() {
-        this.connection =  pgp()("uri de conexão do db")
+        this.connection =  pgp()("postgresql://postgres:password@localhost:5432/postgres")
     }
 
     async query(statement: string, params: any): Promise<any> {
